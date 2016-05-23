@@ -1,0 +1,14 @@
+[Unit]
+    Description=Run Barnyard2 Daemon
+    After=local-fs.target mysqld.target suricata.service
+    Before=runlevel2.target runlevel3.target runlevel4.target runlevel5.target shutdown.target
+    Wants=network-online.target
+
+[Service]
+    Type=oneshot
+    RemainAfterExit=yes
+    ExecStart=/usr/sbin/barnyard2.sh start
+    ExecStop=/usr/sbin/barnyard2.sh stop
+
+[Install]
+    WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+# Default config for Snorby
+
+# Snorby root directory
+DIRECTORY=/var/www/snorby
+
+# Configuration file to load
+SURCONF=$DIRECTORY/config/database.yml
+
+# Host and port to listen on
+HOST=10.16.0.35
+PORT=3000
+ENVIRONMENT=production
+
+# PID file
+PIDFILE=$DIRECTORY/tmp/pids/server.pid

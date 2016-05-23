@@ -1,0 +1,24 @@
+[Unit]
+    Description=Run Snorby Daemon
+    After=local-fs.target mysqld.target suricata.service barnyard2.service
+    Before=runlevel2.target runlevel3.target runlevel4.target runlevel5.target shutdown.target
+    Wants=network-online.target
+
+[Service]
+    Environment=rvm_bin_path=/usr/local/rvm/bin
+    Environment=GEM_HOME=/usr/local/rvm/gems/ruby-1.9.3-p551
+    Environment=IRBRC=/usr/local/rvm/rubies/ruby-1.9.3-p551/.irbrc
+    Environment=MY_RUBY_HOME=/usr/local/rvm/rubies/ruby-1.9.3-p551
+    Environment=rvm_path=/usr/local/rvm
+    Environment=rvm_prefix=/usr/local
+    Environment=PATH=/usr/local/rvm/gems/ruby-1.9.3-p551/bin:/usr/local/rvm/gems/ruby-1.9.3-p551@global/bin:/usr/local/rvm/rubies/ruby-1.9.3-p551/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/rvm/bin
+    Environment=GEM_PATH=/usr/local/rvm/gems/ruby-1.9.3-p551:/usr/local/rvm/gems/ruby-1.9.3-p551@global
+    Environment=RUBY_VERSION=ruby-1.9.3-p551
+
+    Type=oneshot
+    RemainAfterExit=yes
+    ExecStart=/usr/sbin/snorby.sh start
+    ExecStop=/usr/sbin/snorby.sh stop
+
+[Install]
+    WantedBy=multi-user.target

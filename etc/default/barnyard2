@@ -1,0 +1,16 @@
+# Default config for Barnyard2
+
+# Configuration file to load
+SURCONF=/etc/suricata/barnyard2.conf
+
+# Spool file
+SPOOL=/var/log/suricata
+
+# File pattern
+PATTERN=unified2.alert
+
+# Bookmarking using
+WORKER=/var/log/suricata/suricata.waldo
+
+# PID file
+PIDFILE=/var/run/barnyard2.pid
