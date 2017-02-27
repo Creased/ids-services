@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Baptiste MOINE <bap.moine.86@gmail.com>
+# Author: Baptiste MOINE <contact@bmoine.fr>
 ### BEGIN INIT INFO
 # Provides:          barnyard2
 # Required-Start:    $local_fs $mysqld $suricata
